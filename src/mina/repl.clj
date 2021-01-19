@@ -8,7 +8,7 @@
             ;; [re-frame.core :as re-frame]
             [cheshire.core :as json]))
 
-(def pub-key "B62qm1CqZ3A7gY43QoAKLTnkorVEMyuRwv1minimcUv42xjN6QJm4UB")
+(def pub-key "your public key goes here")
 
 (defgraphql graphql-queries
   "gql/account_for_key_and_token.graphql"

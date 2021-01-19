@@ -28,6 +28,12 @@ The recommended way to use it is with emacs and
 [cider](https://docs.cider.mx/cider/1.0/index.html) or any editor with
 integrated REPL support. You can also start up a REPL and use it directly.
 
+Edit `src/mina/repl.clj`. Put  yor public key in the `pub-key` def.
+
+Jack-in to a repl: `C-c C-x C-j C-j`.  Starting at the top, execute the sexps.  Uncomment the line in `(def gql-request ... )` that contains the query you want.  Adjust the variables map to taste.
+
+Construction and submission of the query is wrapped in a `(let )` production.  Add code there to inspect/manipulate the result.
+
 ## Examples
 
 ...
