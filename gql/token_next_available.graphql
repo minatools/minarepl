@@ -1,0 +1,4 @@
+# coda advanced next-available-token -> next_available_token_cmd -> Graphql_queries.Next_available_token
+query token_next_available {
+  nextAvailableToken
+}

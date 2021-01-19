@@ -1,0 +1,5 @@
+mutation createHDAccount ($hd_index: UInt32) {
+  createHDAccount(input: {index: $hd_index}) {
+    public_key: publicKey
+  }
+}

@@ -1,0 +1,12 @@
+# coda advanced snark-job-list -> snark_pool_list -> Graphql_queries.Snark_pool
+
+# "List of snark works in the snark pool in JSON format"
+
+query snark_pool {
+  snarkPool {
+    fee
+    prover
+    workIds
+  }
+}
+

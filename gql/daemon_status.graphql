@@ -1,0 +1,27 @@
+query daemon_status {
+  daemonStatus {
+    numAccounts
+    blockchainLength
+    highestBlockLengthReceived
+    uptimeSecs
+    ledgerMerkleRoot
+    stateHash
+    chainId
+    commitId
+    confDir
+    peers
+    userCommandsSent
+    snarkWorker
+    snarkWorkFee
+    syncStatus
+    blockProductionKeys
+    histograms
+    consensusTimeBestTip
+    nextBlockProduction
+    consensusTimeNow
+    consensusMechanism
+    consensusConfiguration
+    addrsAndPorts
+  }
+}
+

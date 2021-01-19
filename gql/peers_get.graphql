@@ -1,0 +1,7 @@
+query get_peers {
+  getPeers {
+    host
+    libp2pPort
+    peerId
+  }
+}

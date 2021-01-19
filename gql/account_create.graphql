@@ -1,0 +1,7 @@
+## coda accounts create -> create_account -> Graphql_queries.Create_account
+
+mutation account_create ($password: String) {
+  createAccount(input: {password: $password}) {
+    publicKey
+  }
+}

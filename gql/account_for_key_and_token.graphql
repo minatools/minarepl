@@ -1,0 +1,66 @@
+query account_for_key_and_token($pubKey: PublicKey, $tok: UInt64) {
+  account(publicKey: $pubKey, token: $tok) {
+    # The public identity of the account
+    publicKey
+    # The token associated with this account
+    token
+    # The amount of coda owned by the account
+    balance {
+      # The amount of coda owned by the account
+      total  # UInt64!
+      # The amount of coda owned by the account whose origin is currently unknown
+      unknown # @deprecated
+      # Block height at which balance was measured
+      blockHeight  # : UInt32!
+      # Hash of block at which balance was measured. Can be null if bootstrapping.
+      # Guaranteed to be non-null for direct account lookup queries when not
+      # bootstrapping. Can also be null when accessed as nested properties (eg. via
+      # delegators).
+      stateHash # String
+    }
+    # A natural number that increases with each transaction (stringified uint32)
+    nonce
+    # Like the `nonce` field, except it includes the scheduled transactions
+    # (transactions not yet included in a block) (stringified uint32)
+    inferredNonce
+    # The account that you delegated on the staking ledger of the current block's
+    # epoch
+    epochDelegateAccount {
+      publicKey
+      token
+    }
+    # Top hash of the receipt chain merkle-list
+    receiptChainHash
+    # The public key to which you are delegating - if you are not delegating to
+    # anybody, this would return your public key
+    delegate
+    # The account to which you are delegating - if you are not delegating to anybody,
+    # this would return your public key
+    delegateAccount {
+      publicKey
+      token
+    }
+
+    # The list of accounts which are delegating to you (note that the info is recorded
+    # in the last epoch so it might not be up to date with the current account status)
+    delegators
+    # The list of accounts which are delegating to you in the last epoch (note that
+    # the info is recorded in the one before last epoch epoch so it might not be up to
+    # date with the current account status)
+    lastEpochDelegators
+    # The previous epoch lock hash of the chain which you are voting for
+    votingFor
+    # True if you are actively staking with this account on the current daemon - this
+    # may not yet have been updated if the staking key was changed recently
+    stakingActive
+    # Path of the private key file for this account
+    privateKeyPath
+    # True if locked, false if unlocked, null if the account isn't tracked by the
+    # queried daemon
+    locked
+    # True if this account owns its associated token
+    isTokenOwner
+    # True if this account has been disabled by the owner of the associated token
+    isDisabled
+  }
+}

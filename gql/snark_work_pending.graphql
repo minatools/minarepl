@@ -1,0 +1,19 @@
+## coda advanced pending-snark-work -> pending_snark_work -> Graphql_queries.Pending_snark_work
+
+# "List of snark works in JSON format that are not available in the pool yet"
+
+
+query snark_work_pending {
+  pendingSnarkWork {
+    workBundle {
+      sourceLedgerHash
+      targetLedgerHash
+      feeExcess {
+        sign
+        feeMagnitude
+      }
+      supplyIncrease
+      workId
+    }
+  }
+}

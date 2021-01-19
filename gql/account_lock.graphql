@@ -1,0 +1,5 @@
+mutation lockAccount ($public_key: PublicKey) {
+  lockAccount(input: {publicKey: $public_key }) {
+    public_key: publicKey
+  }
+}

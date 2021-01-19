@@ -1,0 +1,7 @@
+# coda client set-snark-worker -> set_snark_worker -> Graphql_queries.Set_snark_worker
+
+mutation snark_set_worker ($publicKey: PublicKey) {
+  setSnarkWorker (input : {publicKey: $publicKey}) {
+    lastSnarkWorker
+  }
+}

@@ -1,0 +1,11 @@
+## coda accounts list -> list_accounts -> Graphql_queries.Get_tracked_accounts
+## NB: this seems to mean all accounts associated with key used to start daemon
+query accountsList {
+  trackedAccounts {
+    publicKey
+    locked
+    balance {
+      total
+    }
+  }
+}
